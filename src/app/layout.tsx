@@ -1,3 +1,5 @@
+import Nav from "@/components/Nav/Nav";
+import { DatadogRum } from "@/logs/datadog-init";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -28,6 +30,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <DatadogRum />
+        <Nav />
         {children}
       </body>
     </html>
